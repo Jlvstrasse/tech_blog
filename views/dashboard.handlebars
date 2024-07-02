@@ -1,0 +1,23 @@
+<h1>Dashboard</h1>
+
+<a href="/">Home</a>
+<button id="logout">Logout</button>
+
+<div class="new-post">
+  <h2>Create a New Post</h2>
+  <form class="new-post-form">
+    <input type="text" id="post-title" name="post-title" placeholder="Post Title" required>
+    <textarea id="post-content" name="post-content" placeholder="Post Content" required></textarea>
+    <button type="submit">Create Post</button>
+  </form>
+</div>
+
+<div class="post-list">
+  {{#each posts}}
+    <div class="post">
+      <h2>{{this.title}}</h2>
+      <p>{{this.content}}</p>
+      <button data-id="{{this.id}}" class="delete-post-btn">Delete</button>
+    </div>
+  {{/each}}
+</div>
