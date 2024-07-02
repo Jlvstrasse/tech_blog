@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: tech-blog
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: tech-blog-db
+          property: connectionString
+databases:
+  - name: tech-blog-db
+    plan: starter
+    postgresVersion: 13
