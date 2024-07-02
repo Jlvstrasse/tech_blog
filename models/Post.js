@@ -29,7 +29,6 @@ Post.init(
   },
   {
     sequelize,
-    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: 'post',
@@ -37,3 +36,4 @@ Post.init(
 );
 
 module.exports = Post;
+
