@@ -1,0 +1,17 @@
+<h1>Welcome to the Tech Blog</h1>
+
+{{#if logged_in}}
+    <a href="/dashboard">Dashboard</a>
+    <button id="logout">Logout</button>
+{{else}}
+    <a href="/login">Login</a>
+    <a href="/signup">Sign Up</a>
+{{/if}}
+
+{{#each posts}}
+    <div class="post">
+        <h2>{{this.title}}</h2>
+        <p>{{this.content}}</p>
+        <p>Posted by {{this.user.username}} on {{this.createdAt}}</p>
+    </div>
+{{/each}}
