@@ -3,14 +3,14 @@ DROP TABLE IF EXISTS posts;
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
-  id INT AUTO_INCREMENT PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   username VARCHAR(30) NOT NULL,
   password VARCHAR(100) NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE posts (
-  id INT AUTO_INCREMENT PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   title VARCHAR(100) NOT NULL,
   content TEXT NOT NULL,
   user_id INT,
@@ -19,7 +19,7 @@ CREATE TABLE posts (
 );
 
 CREATE TABLE comments (
-  id INT AUTO_INCREMENT PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   comment_text TEXT NOT NULL,
   user_id INT,
   post_id INT,
@@ -27,3 +27,4 @@ CREATE TABLE comments (
   FOREIGN KEY (user_id) REFERENCES users(id),
   FOREIGN KEY (post_id) REFERENCES posts(id)
 );
+

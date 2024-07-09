@@ -1,0 +1,20 @@
+{{#if logged_in}}
+  <a href="/dashboard">Dashboard</a>
+  <a href="#" id="logout">Logout</a>
+{{else}}
+  <a href="/login">Login</a>
+  <a href="/signup">Sign Up</a>
+{{/if}}
+
+<h1>Home Page</h1>
+
+{{#each posts}}
+  <div class="post">
+    <h2>{{title}}</h2>
+    <p>{{content}}</p>
+    <small>Posted by {{user.username}} on {{createdAt}}</small>
+    <a href="/post/{{id}}">Read More</a>
+  </div>
+{{/each}}
+
+

@@ -11,8 +11,8 @@ Comment.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    comment_text: {
-      type: DataTypes.STRING,
+    content: {
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     user_id: {
@@ -32,6 +32,7 @@ Comment.init(
   },
   {
     sequelize,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: 'comment',
@@ -39,4 +40,5 @@ Comment.init(
 );
 
 module.exports = Comment;
+
 
