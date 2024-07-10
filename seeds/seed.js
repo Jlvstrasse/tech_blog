@@ -20,13 +20,11 @@ const seedDatabase = async () => {
     });
   }
 
-  const posts = await Post.findAll();
-
   for (const comment of commentData) {
     await Comment.create({
       ...comment,
       user_id: users[Math.floor(Math.random() * users.length)].id,
-      post_id: posts[Math.floor(Math.random() * posts.length)].id,
+      post_id: Math.floor(Math.random() * postData.length) + 1,
     });
   }
 
@@ -34,4 +32,5 @@ const seedDatabase = async () => {
 };
 
 seedDatabase();
+
 
